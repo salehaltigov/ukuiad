@@ -1,0 +1,25 @@
+@charset 'UTF-8';
+
+.custom-icon {
+  svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor !important;
+    * {
+      fill: currentColor !important;
+    }
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+}

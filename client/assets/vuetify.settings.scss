@@ -1,0 +1,22 @@
+@charset 'UTF-8';
+
+@use 'vuetify/settings' with (
+  $border-radius-root: 15px,
+  $alert-border-opacity: 1,
+  $alert-border-radius: 20px,
+  $alert-border-thin-width: 15px,
+  $alert-background: rgb(var(--v-theme-background)),
+  $alert-title-font-weight: 600,
+  $chip-border-radius: 10px,
+  $chip-font-weight: 600,
+  $chip-disabled-opacity: 0.1,
+  $list-border-radius: 20px,
+  $list-item-title-font-weight: 500,
+  $table-density: (
+    'sparse': 15,
+    'default': 0,
+    'comfortable': -2,
+    'compact': -4,
+  ),
+  $table-header-font-weight: 600
+);

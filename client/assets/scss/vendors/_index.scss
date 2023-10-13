@@ -1,0 +1,8 @@
+@charset 'UTF-8';
+
+@use 'vuetify' with (
+  $body-font-family: 'Montserrat',
+  $font-weights: (
+    'semi-bold': 600,
+  )
+);

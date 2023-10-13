@@ -1,0 +1,95 @@
+[tool.poetry]
+name = "project_name"
+version = "1.0.0"
+description = "project description"
+authors = ["Developers Team <developer@mail.com>"]
+
+[tool.black]
+line-length = 79
+
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+use_parentheses = true
+line_length = 79
+
+
+[tool.taskipy.tasks]
+manage = "python ./server/manage.py"
+clear = "task manage clear"
+dumpdata = "task manage dump"
+migrate = "task manage migrate --noinput"
+server = "task manage runserver"
+loaddata = "task manage loaddata"
+startapp = "task manage createapp"
+initconfig = "task manage initconfig"
+makemigrations = "task manage makemigrations"
+createsuperuser = "task manage createsuperuser"
+collectstatic = "task manage collectstatic --noinput"
+gunicorn = "gunicorn --timeout 300 --chdir ./server config.wsgi:application -b 0.0.0.0:8000"
+defaultadmin = "task manage defaultadmin"
+defaultfixtures = "task manage defaultfixtures"
+
+
+[tool.poetry.dependencies]
+python = "^3.7"
+django = "^3.1.5"
+django-cleanup = "^5.1.0"
+djangorestframework = "^3.11.1"
+django-cors-headers = "^3.6.0"
+django-import-export = "^2.0.1"
+django-environ = "^0.4.5"
+pillow = "^8.1.0"
+djangorestframework-camel-case = "^1.1.2"
+django-filter = "^2.2.0"
+django-easy-select2 = "^1.5.7"
+py-linq = "^1.2.4"
+tqdm = "^4.48.2"
+django-service-objects = "^0.7.0"
+djangorestframework-api-key = "^2.1.0"
+django-admin-interface = "^0.17.3"
+django-apptemplates = "^1.5"
+django-extra-settings = "^0.1.3"
+xlrd = "^2.0.1"
+regex = "^2021.11.10"
+django-ckeditor = "^6.2.0"
+django-admin-sortable2 = "^1.0.3"
+djangorestframework-simplejwt = "^5.2.2"
+dj-rest-auth = "^2.2.5"
+taskipy = "^1.10.3"
+djangorestframework-recursive = "^0.1.2"
+loguru = "^0.6.0"
+drf-spectacular = {extras = ["sidecar"], version = "^0.24.2"}
+django-weasyprint = "^2.2.0"
+requests = "^2.28.1"
+xlsxwriter = "^3.0.7"
+
+[tool.poetry.group.prod]
+optional = true
+
+[tool.poetry.group.prod.dependencies]
+gunicorn = "^20.0.4"
+psycopg2 = "^2.8.4"
+sentry-sdk = "^1.9.10"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.4.4"
+django-debug-toolbar = "^3.1.1"
+django-silk = "^4.2.0"
+autopep8 = "^1.5"
+django-extensions = "^3.0.9"
+pylint-django = "^2.0.13"
+flake8 = "^3.7.9"
+black = "^20.8b1"
+Werkzeug = "^2.0.0"
+safety = "^1.9.0"
+bandit = "^1.7.0"
+pyopenssl = "^22.1.0"
+
+[build-system]
+requires = ["setuptools>=65.0.0", "poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
